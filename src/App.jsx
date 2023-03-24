@@ -21,7 +21,7 @@ function App() {
       const response = await axios.get(STUDENTS_API_URL);
       setStudents(response.data);
     } catch (error) {
-      console.error("Não foi possível fazer a consulta");
+      alert("Não foi possível fazer a consulta");
     }
   }
 
@@ -37,7 +37,7 @@ function App() {
       clearForm();
       fetchStudents();
     } catch (error) {
-      console.error("Não foi possível criar o aluno");
+      alert("Não foi possível criar o aluno");
     }
   }
 
@@ -53,17 +53,18 @@ function App() {
       clearForm();
       fetchStudents();
     } catch (error) {
-      console.error("Não foi possível atualizar o aluno");
+      alert("Não foi possível atualizar o aluno");
     }
   }
 
   async function deleteStudent(id) {
     event.preventDefault();
+    alert("Aluno deletado com sucesso")
     try {
       await axios.delete(`https://api-aluno.vercel.app/aluno/${id}`);
       fetchStudents();
     } catch (error) {
-      console.error("Não foi possível deletar o aluno");
+      alert("Não foi possível deletar o aluno");
     }
   }
 
@@ -145,17 +146,5 @@ function App() {
     </div>
   );
 }
-
-// function Student({ student }) {
-//   return (
-//     <li>
-//       <h3>{student.nome}</h3>
-//       <p>Curso: {student.curso}</p>
-//       <p>id: {student._id}</p>
-//       <button onClick={() => fillForm(student)}>Editar</button>
-//       <button onClick={() => deleteStudent(student._id)}>Apagar</button>
-//     </li>
-//   );
-// }
 
 export default App;
