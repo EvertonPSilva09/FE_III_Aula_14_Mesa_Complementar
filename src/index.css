@@ -1,0 +1,54 @@
+:root {
+  --background-color: white;
+  --text-color: black;
+  --card-background-color: white;
+}
+
+[data-theme="dark"] {
+  --background-color: black;
+  --text-color: white;
+  --card-background-color: #333;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin-bottom: 0.5rem;
+}
+
+li h3,
+li p {
+  margin-left: 0.5rem;
+}
+
+.theme-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.theme-button.light {
+  background-color: #f0e68c;
+  color: #333;
+}
+
+.theme-button.dark {
+  background-color: #333;
+  color: #f0e68c;
+}
+
+.button-container {
+  text-align: right;
+}
